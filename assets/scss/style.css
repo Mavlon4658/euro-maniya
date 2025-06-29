@@ -491,6 +491,7 @@ main {
   justify-content: center;
   border-radius: 50%;
   background: #F9F9F9;
+  position: relative;
 }
 @media screen and (max-width: 992px) {
   .header-right a, .header-right button {
@@ -499,6 +500,30 @@ main {
   }
   .header-right a img, .header-right a svg, .header-right button img, .header-right button svg {
     height: 15px;
+  }
+}
+.header-right a span, .header-right button span {
+  bottom: -1px;
+  right: -3px;
+  position: absolute;
+  border-radius: 100px;
+  padding: 3px 7px 0;
+  height: 25px;
+  background: #C31723;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 10px;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 991px) {
+  .header-right a span, .header-right button span {
+    height: 15px;
+    padding: 2px 3.5px 0;
+    font-size: 10px;
+    line-height: 7px;
   }
 }
 .header .search-form {
@@ -2538,6 +2563,57 @@ main {
 }
 .filter-modal.active {
   display: block;
+}
+@keyframes filterModalBgActive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes filterModalContentActive {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.filter-modal.active .filter-modal__bg {
+  animation: filterModalBgActive 0.3s linear 1;
+}
+.filter-modal.active .filter-modal__content-wrap {
+  animation: filterModalContentActive 0.3s linear 1;
+}
+.filter-modal.end-active {
+  display: block;
+}
+@keyframes filterModalBgEndActive {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes filterModalContentEndActive {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+.filter-modal.end-active .filter-modal__bg {
+  animation: filterModalBgEndActive 0.3s linear 1;
+  opacity: 0;
+}
+.filter-modal.end-active .filter-modal__content-wrap {
+  opacity: 0;
+  animation: filterModalContentEndActive 0.3s linear 1;
 }
 
 .form-radio {

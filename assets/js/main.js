@@ -290,14 +290,17 @@ if (filterModalOpen.length) {
             bodyHidden();
         }
     })
-    filterModalBg.onclick = () => {
+    
+    const closeModal = () => {
         filterModal.classList.remove('active');
         bodyVisible();
+        filterModal.classList.add('end-active');
+        setTimeout(() => {
+            filterModal.classList.remove('end-active')
+        }, 400);
     }
-    filterModalClose.onclick = () => {
-        filterModal.classList.remove('active');
-        bodyVisible();
-    }
+    filterModalBg.onclick = () => closeModal();
+    filterModalClose.onclick = () => closeModal();
 }
 
 window.addEventListener('click', event => {

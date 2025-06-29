@@ -419,6 +419,7 @@ main {
             justify-content: center;
             border-radius: 50%;
             background: $color-bg-grey;
+            position: relative;
 
             @include media(992) {
                 width: 35px;
@@ -426,6 +427,30 @@ main {
 
                 img, svg {
                     height: 15px;
+                }
+            }
+
+            span {
+                bottom: -1px;
+                right: -3px;
+                position: absolute;
+                border-radius: 100px;
+                padding: 3px 7px 0;
+                height: 25px;
+                background: $color-main-red;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 10px;
+                color: $color-bg-white;
+
+                @include media(991) {
+                    height: 15px;
+                    padding: 2px 3.5px 0;
+                    font-size: 10px;
+                    line-height: 7px;
                 }
             }
         }
@@ -2658,6 +2683,70 @@ main {
 
     &.active {
         display: block;
+
+        @keyframes filterModalBgActive {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes filterModalContentActive {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .filter-modal {
+            &__bg {
+                animation: filterModalBgActive .3s linear 1;
+            }
+
+            &__content-wrap {
+                animation: filterModalContentActive .3s linear 1;
+            }
+        }
+    }
+
+    &.end-active {
+        display: block;
+
+        @keyframes filterModalBgEndActive {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes filterModalContentEndActive {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(100%);
+            }
+        }
+
+        .filter-modal {
+            &__bg {
+                animation: filterModalBgEndActive .3s linear 1;
+                opacity: 0;
+            }
+
+            &__content-wrap {
+                opacity: 0;
+                animation: filterModalContentEndActive .3s linear 1;
+            }
+        }
     }
 }
 // Filter modal end
