@@ -1,0 +1,75 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'RocStart';
+    src: url('../fonts/RockStar/RS-extralight.otf') format('opentype');
+    font-weight: 250;
+}
+
+@font-face {
+    font-family: 'RocStart';
+    src: url('../fonts/RockStar/RS-regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'RocStart';
+    src: url('../fonts/RockStar/RS-semibold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'RocStart';
+    src: url('../fonts/RockStar/RS-extrabold.otf') format('opentype');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Xolonium';
+    src: url('../fonts/Xolonium/Xolonium-Regular.otf') format('opentype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Xolonium';
+    src: url('../fonts/Xolonium/Xolonium-Bold.otf') format('opentype');
+    font-weight: 700;
+}
+
+$font-roboto: "Roboto", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+$font-inter: "Inter", sans-serif;
+$font-rockstar: "RocStart", sans-serif;
+$font-xolonium: "Xolonium", sans-serif;
+// Fonts end
+
+// Colors
+$color-main-red: #C31723;
+$color-bg-white: #FFFFFF;
+$color-bg-grey: #F9F9F9;
+$color-text-black: #343030;
+$color-text-dark-grey: #B7B7B7;
+$color-text-grey: #D9D9D9;
+// Colors end
+
+@mixin media($value) {
+    @if ($value < 0) {
+        @media screen and (min-width: calc($value * (-1)) + 'px') {
+            @content;
+        }
+
+    } @else {
+        @media screen and (max-width: $value + 'px') {
+            @content;
+        }
+    }
+}
+
+@mixin secPadding() {
+    padding-top: 100px;
+
+    @include media(991) {
+        padding-top: 80px;
+    }
+}
