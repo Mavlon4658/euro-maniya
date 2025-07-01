@@ -303,6 +303,120 @@ if (filterModalOpen.length) {
     filterModalClose.onclick = () => closeModal();
 }
 
+const productChildSwp = new Swiper('.product .child-swp .swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    breakpoints: {
+        991: {
+            slidesPerView: 6,
+            direction: "vertical"
+        }
+    }
+})
+
+const productParentSwp = new Swiper('.product .parent-swp .swiper', {
+    slidesPerView: 1,
+    effect: 'fade',
+    thumbs: {
+        swiper: productChildSwp,
+    },
+})
+
+const productAcc = document.querySelectorAll('.product-accordion');
+
+if (productAcc.length) {
+    productAcc.forEach((item) => {
+        const accBtn = item.querySelector('.product-accordion__btn');
+        const accBody = item.querySelector('.product-accordion__body-wrap');
+
+        accBtn.addEventListener('click', () => {
+            accBtn.classList.toggle('active')
+            accBody.style.maxHeight = accBody.style.maxHeight ? null : accBody.scrollHeight + 'px';
+        });
+    });
+}
+
+const productBtn = document.querySelector('.product .btns .btn-red');
+const productEl = document.querySelector('.product .btns');
+
+if (productBtn) {
+    productBtn.onclick = () => {
+        productEl.classList.add('active')
+    }
+}
+
+const calculation = document.querySelectorAll('.calculation');
+
+if (calculation.length) {
+    calculation.forEach(el => {
+        const minus = el.querySelector('.minus');
+        const plus = el.querySelector('.plus');
+        const text = el.querySelector('span');
+        const textInp = el.querySelector('input');
+
+        minus.onclick = () => {
+            if (parseInt(textInp.value) > 1) {
+                text.textContent = parseInt(textInp.value) - 1;
+                textInp.value = parseInt(textInp.value) - 1;
+            }
+        }
+        
+        plus.onclick = () => {
+            text.textContent = parseInt(textInp.value) + 1;
+            textInp.value = parseInt(textInp.value) + 1;
+        }
+    })
+}
+
+const likeProductSwp = new Swiper('.like-product__swp', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    breakpoints: {
+        991: {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+        }
+    },
+    navigation: {
+        nextEl: '.like-product .swp-next',
+        prevEl: '.like-product .swp-prev',
+    }
+})
+
+if (document.querySelector('.like-product__swp')) {
+    const likeProductSwpPagination = document.querySelector('.like-product .swp-fraction');
+    likeProductSwpPagination.innerHTML = `<span>${likeProductSwp.realIndex + 1} /</span> ${likeProductSwp.slides.length}`;
+    likeProductSwp.on('slideChange', function (e) {
+        likeProductSwpPagination.innerHTML = `<span>${likeProductSwp.realIndex + 1} /</span> ${likeProductSwp.slides.length}`;
+    });
+}
+
+const basketModal = document.querySelector('.basket-modal');
+const basketModalOpen = document.querySelectorAll('.basket-modal__open');
+const basketModalClose = document.querySelector('.basket-modal__close');
+const basketModalBg = document.querySelector('.basket-modal__bg');
+
+if (basketModalOpen.length) {
+    basketModalOpen.forEach(btn => {
+        btn.onclick = () => {
+            basketModal.classList.add('active');
+            bodyHidden();
+        }
+    })
+    
+    const closeModal = () => {
+        basketModal.classList.remove('active');
+        bodyVisible();
+        basketModal.classList.add('end-active');
+        setTimeout(() => {
+            basketModal.classList.remove('end-active')
+        }, 400);
+    }
+    basketModalBg.onclick = () => closeModal();
+    basketModalClose.onclick = () => closeModal();
+}
+
 window.addEventListener('click', event => {
     if (catalogSort.length) {
         catalogSort.forEach(el => {
