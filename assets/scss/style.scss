@@ -4548,9 +4548,13 @@ main {
             font-weight: 400;
             font-size: 14px;
             line-height: 140%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
 
             @include media(991) {
                 font-size: 12px;
+                gap: 30px;
             }
         }
     }
