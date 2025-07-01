@@ -435,6 +435,20 @@ if (promoCode) {
     }
 }
 
+const deliveryAcc = document.querySelectorAll('.delivery-payment__accordion');
+
+if (deliveryAcc.length) {
+    deliveryAcc.forEach((item) => {
+        const accBtn = item.querySelector('.delivery-payment__accordion-btn');
+        const accBody = item.querySelector('.delivery-payment__accordion-body');
+    
+        accBtn.addEventListener('click', () => {
+            accBtn.classList.toggle('active');
+            accBody.style.maxHeight = accBody.style.maxHeight ? null : accBody.scrollHeight + 'px';
+        });
+    });
+}
+
 window.addEventListener('click', event => {
     if (catalogSort.length) {
         catalogSort.forEach(el => {

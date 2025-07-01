@@ -4474,3 +4474,85 @@ main {
     }
 }
 // Paid end
+
+// Delivery and payment
+.delivery-payment {
+    padding-bottom: 100px;
+
+    @include media(991) {
+        padding-bottom: 60px;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 21px;
+        text-transform: uppercase;
+        margin-bottom: 100px;
+
+        @include media(991) {
+            font-size: 18px;
+            line-height: 13px;
+            margin-bottom: 60px;
+        }
+    }
+
+    &__accordion {
+        &-wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        &-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 140%;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+            gap: 10px;
+
+            @include media(991) {
+                font-size: 14px;
+            }
+
+            img:last-child {
+                display: none;
+            }
+
+            &.active {
+                img {
+                    display: none;
+
+                    &:last-child {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        &-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        &-text {
+            padding-top: 40px;
+            max-width: 898px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+
+            @include media(991) {
+                font-size: 12px;
+            }
+        }
+    }
+}
+// Delivery and payment end
