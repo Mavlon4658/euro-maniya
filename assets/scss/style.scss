@@ -4414,3 +4414,63 @@ main {
     background-position: calc(100% - 20px) center;
 }
 // Form select end
+
+// Paid
+.paid {
+    &-container {
+        min-height: calc(100vh - 505px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include media(991) {
+            min-height: inherit;
+        }
+    }
+
+    &-text {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding: 165px 0 186px;
+        transform: translateY(-11px);
+
+        @include media(991) {
+            padding: 60px 0;
+        }
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 21px;
+        text-transform: uppercase;
+        color: #1d1d1d;
+        margin-top: 30px;
+
+        @include media(991) {
+            font-size: 18px;
+            line-height: 13px;
+        }
+    }
+
+    p {
+        max-width: 554px;
+        font-weight: 250;
+        font-size: 14px;
+        line-height: 140%;
+        color: #1d1d1d;
+    }
+
+    .btn-red {
+        @include media(991) {
+            height: 60px;
+            font-size: 16px;
+            max-width: 320px;
+            width: 100%;
+        }
+    }
+}
+// Paid end
