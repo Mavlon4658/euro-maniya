@@ -4560,3 +4560,86 @@ main {
     }
 }
 // Delivery and payment end
+
+// Featured
+.featured {
+    h2 {
+        font-weight: 600;
+        font-size: 30px;
+        text-transform: uppercase;
+        line-height: 21px;
+        margin-bottom: 100px;
+
+        @include media(991) {
+            font-size: 18px;
+            line-height: 13px;
+            margin-bottom: 60px;
+        }
+    }
+
+    .alert {
+        border-radius: 100px;
+        padding: 3px 20px 0;
+        height: 50px;
+        background: $color-bg-grey;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $color-text-dark-grey;
+        margin-bottom: 60px;
+
+        @include media(991) {
+            font-size: 12px;
+            padding: 3px 15px 0;
+            height: 35px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &-card {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 40px 20px;
+        
+        @include media(1200) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+        
+        @include media(991) {
+            gap: 30px 10px;
+        }
+        
+        @include media(768) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            .main-card {
+                &__head {
+                    .main-img {
+                        height: 240px;
+                        border-radius: 25px;
+                    }
+
+                    .like-btn {
+                        top: 20px;
+                        left: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .pagination {
+        margin-top: 100px;
+        width: 100%;
+        justify-content: center;
+
+        @include media(991) {
+            margin-top: 60px;
+        }
+    }
+}
+// Featured end
