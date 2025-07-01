@@ -417,6 +417,24 @@ if (basketModalOpen.length) {
     basketModalClose.onclick = () => closeModal();
 }
 
+const promoCode = document.querySelector('.promocode');
+const promoCodeInp = document.querySelector('.promocode-inp');
+const promoCodeBtn = document.querySelector('.promocode button');
+
+if (promoCode) {
+    promoCodeInp.oninput = event => {
+        if (event.target.value != "") {
+            promoCode.classList.add('active');
+        } else {
+            promoCode.classList.remove('active');
+        }
+    }
+    promoCodeBtn.onclick = () => {
+        promoCode.classList.remove('active');
+        promoCodeInp.value = "";
+    }
+}
+
 window.addEventListener('click', event => {
     if (catalogSort.length) {
         catalogSort.forEach(el => {
