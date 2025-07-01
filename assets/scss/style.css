@@ -4428,4 +4428,119 @@ main {
   .featured .pagination {
     margin-top: 60px;
   }
+}
+
+.contacts {
+  padding-bottom: 100px;
+}
+@media screen and (max-width: 991px) {
+  .contacts {
+    padding-bottom: 60px;
+  }
+}
+.contacts h2 {
+  font-weight: 600;
+  font-size: 30px;
+  text-transform: uppercase;
+  margin-bottom: 100px;
+}
+@media screen and (max-width: 991px) {
+  .contacts h2 {
+    font-size: 18px;
+    margin: -20px 0 60px;
+  }
+}
+.contacts-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+@media screen and (max-width: 991px) {
+  .contacts-card {
+    flex-direction: column;
+  }
+}
+.contacts-card__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+@media screen and (max-width: 991px) {
+  .contacts-card__wrap {
+    gap: 40px;
+  }
+}
+.contacts-card .title {
+  width: 491px;
+  flex-shrink: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 11px;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+@media screen and (max-width: 1200px) {
+  .contacts-card .title {
+    width: 350px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .contacts-card .title {
+    font-size: 14px;
+    line-height: 10px;
+  }
+}
+.contacts-card .title .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C31723;
+  margin-bottom: 9px;
+}
+.contacts-card__right {
+  width: 100%;
+}
+.contacts-card__right p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+@media screen and (max-width: 991px) {
+  .contacts-card__right p {
+    font-size: 12px;
+  }
+}
+.contacts-card__right .links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contacts-card__right .links a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 11px;
+}
+@media screen and (max-width: 991px) {
+  .contacts-card__right .links a {
+    font-size: 12px;
+  }
+}
+.contacts-card__right ul:not(.links) {
+  max-width: 451px;
+}
+.contacts-card__right ul:not(.links) li {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+@media screen and (max-width: 991px) {
+  .contacts-card__right ul:not(.links) li {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -4678,3 +4678,122 @@ main {
     }
 }
 // Featured end
+
+// Contact
+.contacts {
+    padding-bottom: 100px;
+
+    @include media(991) {
+        padding-bottom: 60px;
+    }
+
+    h2 {
+        font-weight: 600;
+        font-size: 30px;
+        text-transform: uppercase;
+        margin-bottom: 100px;
+
+        @include media(991) {
+            font-size: 18px;
+            margin: -20px 0 60px;
+        }
+    }
+
+    &-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        @include media(991) {
+            flex-direction: column;
+        }
+
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+
+            @include media(991) {
+                gap: 40px;
+            }
+        }
+
+        .title {
+            width: 491px;
+            flex-shrink: 0;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 11px;
+            text-transform: uppercase;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+
+            @include media(1200) {
+                width: 350px;
+            }
+
+            @include media(991) {
+                font-size: 14px;
+                line-height: 10px;
+            }
+
+            .dot {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: $color-main-red;
+                margin-bottom: 9px;
+            }
+        }
+
+        &__right {
+            width: 100%;
+
+            p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 140%;
+
+                @include media(991) {
+                    font-size: 12px;
+                }
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    font-weight: 400;
+                    font-size: 16px;
+                    line-height: 11px;
+
+                    @include media(991) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            ul:not(.links) {
+                max-width: 451px;
+
+                li {
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 140%;
+
+                    @include media(991) {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+// Contact end
