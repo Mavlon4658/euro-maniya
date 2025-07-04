@@ -524,6 +524,8 @@ main {
     padding: 2px 3.5px 0;
     font-size: 10px;
     line-height: 7px;
+    bottom: 1px;
+    right: 1px;
   }
 }
 .header .search-form {
@@ -2200,6 +2202,17 @@ main {
 .catalog-head__btn span {
   color: #C31723;
 }
+@media screen and (max-width: 991px) {
+  .catalog-head .filter-btn {
+    background: #C31723;
+    color: white;
+    padding-top: 3px;
+  }
+  .catalog-head .filter-btn img {
+    margin-top: -3px;
+    filter: brightness(0) invert(1);
+  }
+}
 .catalog-head__right {
   display: flex;
   align-items: center;
@@ -2260,6 +2273,15 @@ main {
 }
 .catalog-sort__btn.selected img {
   filter: brightness(0) invert(1);
+}
+@media screen and (max-width: 991px) {
+  .catalog-sort__btn {
+    background: #C31723;
+    color: #FFFFFF;
+  }
+  .catalog-sort__btn img {
+    filter: brightness(0) invert(1);
+  }
 }
 .catalog-sort__list {
   position: absolute;

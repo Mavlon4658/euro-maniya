@@ -451,6 +451,8 @@ main {
                     padding: 2px 3.5px 0;
                     font-size: 10px;
                     line-height: 7px;
+                    bottom: 1px;
+                    right: 1px;
                 }
             }
         }
@@ -2271,8 +2273,17 @@ main {
             }
         }
 
-        .fiter-btn {
+        .filter-btn {
+            @include media(991) {
+                background: $color-main-red;
+                color: white;
+                padding-top: 3px;
 
+                img {
+                    margin-top: -3px;
+                    filter: brightness(0) invert(1);
+                }
+            }
         }
 
         &__right {
@@ -2332,6 +2343,15 @@ main {
             }
 
             &.selected {
+                background: $color-main-red;
+                color: $color-bg-white;
+
+                img {
+                    filter: brightness(0) invert(1);
+                }
+            }
+
+            @include media(991) {
                 background: $color-main-red;
                 color: $color-bg-white;
 
